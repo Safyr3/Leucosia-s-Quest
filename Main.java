@@ -44,8 +44,31 @@ public class Main
     }
     System.out.println();
     System.out.println();
+    
+    boolean answered = false;
 
-    System.out.println("What do you do?");
-
+    while(answered == false)
+    {
+      System.out.println("What do you want to do?");
+      String firstOption = scanner.nextLine();
+      
+      if(firstOption.equals("go") || firstOption.equals("do it"))
+      {
+        System.out.println();
+        System.out.println("You choose to go");
+        answered = true;
+      }
+      else if (firstOption.equals("don't go") || firstOption.equals("don't do it"))
+      {
+        System.out.println();
+        System.out.println("You choose not to go");
+        answered = true;
+      } 
+      else
+      {
+        System.out.println("I don't understand");
+        System.out.println();
+      }
+    }
   }
 }
