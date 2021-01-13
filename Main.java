@@ -19,7 +19,7 @@ public class Main
   {
     Scanner scanner = new Scanner(System.in);
 
-    String[] name = {"L", "e", "u", "c", "o", "s", "i", "a", "'", "s ", "Q", "u", "e", "s", "t"};
+    String[] name = {"L", "e", "u", "c", "o", "s", "i", "a", "'", "s", " ", "Q", "u", "e", "s", "t"};
 
     System.out.println();
     pause(1000);
@@ -118,5 +118,108 @@ public class Main
 				System.out.println();
 			}
 		}
+
+		boolean ans2 = false;
+		boolean ans2N = false;
+		boolean ans2S = false;
+		boolean ans2E = false;
+		boolean ans2W = false;
+
+		if(ans1N == true)
+		{
+			String seeGoblins = "While making your way North, you can see a goblin camp in the distance. From your knowledge, you know that they are clumsy and are not the best fighters; however, from the looks of the camp, there seem to be 5-10 goblins.";
+			
+			String toDo2 = "There are a group of trees to the East, an open field to the West, and the goblin camp is north.";
+				
+			pause(1000);
+
+			System.out.println();
+			for(int i = 1; i < seeGoblins.length() + 1; i++)
+			{
+				System.out.print(seeGoblins.substring(i - 1, i));
+				pause(50);
+			}
+
+			pause(500);
+			System.out.println();
+
+			for(int i = 1; i < toDo2.length() + 1; i++)
+			{
+				System.out.print(toDo2.substring(i - 1, i));
+				pause(50);
+			}
+
+			pause(1000);
+			System.out.println();
+			System.out.println("What do you do?");
+			
+			String second = scanner.nextLine().toLowerCase();
+
+			while(ans2 == false)
+			{
+				if(second.equals("go north"))
+				{	
+					ans2 = true;
+					ans2N = true;
+					ans2S = false;
+					ans2E = false;
+					ans2W = false;
+					System.out.println("You bravely head North toward the goblin camp.");
+					System.out.println();
+				}
+				else if (second.equals("go south"))
+				{
+					ans2 = true;
+					ans2N = false;
+					ans2S = true;
+					ans2E = false;
+					ans2W = false;
+					System.out.println("You decide to abort your mission.");
+					System.out.println();
+				}
+				else if (second.equals("go east"))
+				{
+					ans2 = true;
+					ans2N = false;
+					ans2S = false;
+					ans2E = true;
+					ans2W = false;
+					System.out.println("You begin heading East toward the tree and attempt to bypass the camp.");
+					System.out.println();
+				}
+				else if (second.equals("go west"))
+				{
+					ans2 = true;
+					ans2N = false;
+					ans2S = false;
+					ans2E = false;
+					ans2W = true;
+					System.out.println("You head West toward the open field and try to go around the camp.");
+					System.out.println();
+				}
+				else
+				{
+					ans2 = false;
+					ans2N = false;
+					ans2S = false;
+					ans2E = false;
+					ans2W = false;
+					System.out.println("I don't understand. Try again:");
+					System.out.println();
+				}
+			}	
+		}
+			else if (ans1S == true)
+			{
+				System.out.println();
+			}
+			else if (ans1E == true)
+			{
+				System.out.println();
+			}
+			else if (ans1W == true)
+			{
+				System.out.println();
+			}
 	}
 }
